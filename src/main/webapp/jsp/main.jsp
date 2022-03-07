@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/main.css">
+<script type="text/javascript" src="ajax.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -26,7 +27,7 @@
 				<li>
 					<h4 class="title"><%=todo.get(i).getTitle() %></h4>
 					<h5 class="content"><%=todo.get(i).getRegdate() %> <%=todo.get(i).getName() %><%=todo.get(i).getSeqeuence() %></h5>
-					<button>-></button>
+					<button class="btn">-></button>
 				</li>
 				
 			<% 	
@@ -46,7 +47,7 @@
 				<li>
 					<h4 class="title"><%=doing.get(i).getTitle() %></h4>
 					<h5 class="content"><%=doing.get(i).getRegdate() %> <%=doing.get(i).getName() %><%=doing.get(i).getSeqeuence() %></h5>
-					<button>-></button>
+					<button class="btn">-></button>
 				</li>
 			<% 	
 				}
@@ -64,7 +65,6 @@
 				<li>
 					<h4 class="title"><%=done.get(i).getTitle() %></h4>
 					<h5 class="content"><%=done.get(i).getRegdate() %> <%=done.get(i).getName() %><%=done.get(i).getSeqeuence() %></h5>
-					<button>-></button>
 				</li>
 			<% 	
 				}

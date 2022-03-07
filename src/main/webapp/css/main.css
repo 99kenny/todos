@@ -1,1 +1,51 @@
 @charset "UTF-8";
+
+#title{
+	display:inline-block;
+	transform:rotate(-30deg);
+	transform-origin:right-top;
+	
+}
+
+header{
+	margin-top: 50px;	
+	border: 1px solid gray;
+}
+
+
+a {
+	height: 40px;
+	width: 200px;
+	float: right;
+	background-color: aqua;
+	text-align:center;
+	line-height: 40px;
+	text-decoration-line: none;
+}
+
+main {
+	border: 1px solid gray;
+	display: flex;
+}
+
+main div {
+	border: 1px solid gray;
+	width:300px;
+}
+
+main div h3{
+	display:inline-block;
+	background-color:navy;
+	color:white;
+	height:70px;
+	width:300px;
+	text-align: left;
+	line-height: 70px;
+}
+
+main div ul li{
+	list-style: none;
+	
+}
+
+

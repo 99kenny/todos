@@ -148,7 +148,7 @@ public class TodoDao {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "select * from todo where type='DOING' order by desc";
+			String sql = "select * from todo where type='DOING' order by regdate desc";
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			try {
@@ -184,7 +184,7 @@ public class TodoDao {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
-			String sql = "select * from todo where type='DONE' order by desc";
+			String sql = "select * from todo where type='DONE' order by regdate desc";
 			ps = conn.prepareStatement(sql);
 			rs = ps.executeQuery();
 			try {

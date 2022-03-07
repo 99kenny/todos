@@ -24,8 +24,8 @@
 				for(int i = 0; i < todo.size(); i++){
 			%>
 				<li>
-					<h4><%=todo.get(i).getTitle() %></h4>
-					<h5><%=todo.get(i).getRegdate() %> <%=todo.get(i).getName() %><%=todo.get(i).getSeqeuence() %></h5>
+					<h4 class="title"><%=todo.get(i).getTitle() %></h4>
+					<h5 class="content"><%=todo.get(i).getRegdate() %> <%=todo.get(i).getName() %><%=todo.get(i).getSeqeuence() %></h5>
 					<button>-></button>
 				</li>
 				
@@ -41,10 +41,13 @@
 		<ul>
 			<%
 				List<Todo> doing = (List<Todo>)request.getAttribute("doing");
-				for(int i = 0; i < todo.size(); i++){
+				for(int i = 0; i < doing.size(); i++){
 			%>
-				<li><%=todo.get(i) %></li>
-				<button>-></button>
+				<li>
+					<h4 class="title"><%=doing.get(i).getTitle() %></h4>
+					<h5 class="content"><%=doing.get(i).getRegdate() %> <%=doing.get(i).getName() %><%=doing.get(i).getSeqeuence() %></h5>
+					<button>-></button>
+				</li>
 			<% 	
 				}
 			%>
@@ -56,9 +59,13 @@
 		<ul>
 			<%
 				List<Todo> done = (List<Todo>)request.getAttribute("done");
-				for(int i = 0; i < todo.size(); i++){
+				for(int i = 0; i < done.size(); i++){
 			%>
-				<li><%=todo.get(i) %></li>
+				<li>
+					<h4 class="title"><%=done.get(i).getTitle() %></h4>
+					<h5 class="content"><%=done.get(i).getRegdate() %> <%=done.get(i).getName() %><%=done.get(i).getSeqeuence() %></h5>
+					<button>-></button>
+				</li>
 			<% 	
 				}
 			%>

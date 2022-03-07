@@ -26,11 +26,13 @@ a {
 main {
 	border: 1px solid gray;
 	display: flex;
+	justify-content: center;
 }
 
 main div {
 	border: 1px solid gray;
 	width:300px;
+	margin: 10px;
 }
 
 main div h3{
@@ -38,14 +40,43 @@ main div h3{
 	background-color:navy;
 	color:white;
 	height:70px;
-	width:300px;
+	width:290px;
 	text-align: left;
 	line-height: 70px;
+	padding-left: 10px;
+	margin: 0px;
+		border: 1px solid gray;
+	
 }
 
-main div ul li{
+main div ul {
 	list-style: none;
+	border: 1px solid gray;
+	padding: 0px;
+	margin: 0px;
+}
+
+main div ul li {
+	margin-top: 10px;
+	height: 70px;
+	padding-top: 0px;
+	background: aqua;
+	border: 1px solid gray;
 	
+}
+.title{
+	padding: 5px;
+	margin: 0px;
+}
+.content{
+	display:inline-block;
+	width: 200px;
+	margin: 0px;
+	padding: 5px;
+}
+
+main div ul li button {
+	border: 1px solid gray;
 }
 
 

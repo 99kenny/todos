@@ -31,8 +31,8 @@ public class MainServlet extends HttpServlet {
 		List<Todo> done = new ArrayList<Todo>();
 		
 		todo = todoDao.getTypeTodo();
-		//doing = todoDao.getTypeDoing();
-		//done = todoDao.getTypeDone();
+		doing = todoDao.getTypeDoing();
+		done = todoDao.getTypeDone();
 		
 		request.setAttribute("todo", todo);
 		request.setAttribute("doing", doing);

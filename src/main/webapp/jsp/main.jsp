@@ -27,7 +27,7 @@
 			%>
 				<li>
 					<h4 class="title"><%=todo.get(i).getTitle() %></h4>
-					<h5 class="content"><%=todo.get(i).getRegdate() %> <%=todo.get(i).getName() %><%=todo.get(i).getSeqeuence() %></h5>
+					<h5 class="content">등록날짜 <%=todo.get(i).getRegdate().split(" ")[0] %>, <%=todo.get(i).getName() %>, 우선순위 <%=todo.get(i).getSeqeuence() %></h5>
 					<button class="btn" id="<%=todo.get(i).getId() %> <%=todo.get(i).getType() %>">-></button>
 				</li>
 				
@@ -43,13 +43,13 @@
 		<ul>
 			<%
 				List<Todo> doing = (List<Todo>)request.getAttribute("doing");
-				System.out.println(doing.size());
 				for(int i = 0; i < doing.size(); i++){
 			%>
 				<li>
+					<%				System.out.println(doing.size()); %>
 					<h4 class="title"><%=doing.get(i).getTitle() %></h4>
-					<h5 class="content"><%=doing.get(i).getRegdate() %> <%=doing.get(i).getName() %><%=doing.get(i).getSeqeuence() %></h5>
-					<button class="btn" id="<%=todo.get(i).getId() %> <%=todo.get(i).getType() %>">-></button>
+					<h5 class="content">등록날짜 <%=doing.get(i).getRegdate().split(" ")[0] %>, <%=doing.get(i).getName() %>, 우선순위 <%=doing.get(i).getSeqeuence() %></h5>
+					<button class="btn" id="<%=doing.get(i).getId() %> <%=doing.get(i).getType() %>">-></button>
 				</li>
 			<% 	
 				}
@@ -66,7 +66,7 @@
 			%>
 				<li>
 					<h4 class="title"><%=done.get(i).getTitle() %></h4>
-					<h5 class="content"><%=done.get(i).getRegdate() %> <%=done.get(i).getName() %><%=done.get(i).getSeqeuence() %></h5>
+					<h5 class="content">등록날짜 <%=done.get(i).getRegdate().split(" ")[0] %>, <%=done.get(i).getName() %>, 우선순위 <%=done.get(i).getSeqeuence() %></h5>
 				</li>
 			<% 	
 				}

@@ -8,16 +8,17 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/main.css">
-<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="javascript/ajax.js"></script>
+
 <title>Insert title here</title>
 </head>
 <body>
 <header>
-	<h1 id="title">나의 해야할 일들</h1>
+	<h1 class="title" id="title">나의 해야할 일들</h1>
 	<a href="/todosapp/form">새로운 TODO 등록</a>
 </header>
 <main>
-	<div>
+	<div id='todo'>
 		<h3>TODO</h3>
 		<ul>
 			<%
@@ -27,7 +28,7 @@
 				<li>
 					<h4 class="title"><%=todo.get(i).getTitle() %></h4>
 					<h5 class="content"><%=todo.get(i).getRegdate() %> <%=todo.get(i).getName() %><%=todo.get(i).getSeqeuence() %></h5>
-					<button class="btn">-></button>
+					<button class="btn" id="<%=todo.get(i).getId() %> <%=todo.get(i).getType() %>">-></button>
 				</li>
 				
 			<% 	
@@ -37,17 +38,18 @@
 		</ul>
 	</div>
 	
-	<div>
+	<div id='doing'>
 		<h3>DOING</h3>
 		<ul>
 			<%
 				List<Todo> doing = (List<Todo>)request.getAttribute("doing");
+				System.out.println(doing.size());
 				for(int i = 0; i < doing.size(); i++){
 			%>
 				<li>
 					<h4 class="title"><%=doing.get(i).getTitle() %></h4>
 					<h5 class="content"><%=doing.get(i).getRegdate() %> <%=doing.get(i).getName() %><%=doing.get(i).getSeqeuence() %></h5>
-					<button class="btn">-></button>
+					<button class="btn" id="<%=todo.get(i).getId() %> <%=todo.get(i).getType() %>">-></button>
 				</li>
 			<% 	
 				}
@@ -55,7 +57,7 @@
 		</ul>
 	</div>
 	
-	<div>
+	<div id='done'>
 		<h3>DONE</h3>
 		<ul>
 			<%

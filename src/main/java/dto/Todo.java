@@ -8,13 +8,13 @@ public class Todo {
 	private String name;
 	private int seqeuence;
 	private String type;
-	private Timestamp regdate;
+	private String regdate;
 	
 	public Todo() {
 		
 	}
 	
-	public Todo(long id, String title, String name, int seqeuence, String type, Timestamp regdate) {
+	public Todo(long id, String title, String name, int seqeuence, String type, String regdate) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -64,11 +64,11 @@ public class Todo {
 		this.type = type;
 	}
 	
-	public Timestamp getRegdate() {
+	public String getRegdate() {
 		return regdate;
 	}
 
-	public void setRegdate(Timestamp regdate) {
+	public void setRegdate(String regdate) {
 		this.regdate = regdate;
 	}
 

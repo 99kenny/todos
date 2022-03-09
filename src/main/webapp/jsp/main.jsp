@@ -46,7 +46,6 @@
 				for(int i = 0; i < doing.size(); i++){
 			%>
 				<li>
-					<%				System.out.println(doing.size()); %>
 					<h4 class="title"><%=doing.get(i).getTitle() %></h4>
 					<h5 class="content">등록날짜 <%=doing.get(i).getRegdate().split(" ")[0] %>, <%=doing.get(i).getName() %>, 우선순위 <%=doing.get(i).getSeqeuence() %></h5>
 					<button class="btn" id="<%=doing.get(i).getId() %> <%=doing.get(i).getType() %>">-></button>

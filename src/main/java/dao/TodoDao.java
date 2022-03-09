@@ -45,6 +45,30 @@ public class TodoDao {
 		}
 	}
 	
+	public void updateTodo(String id, String type) {
+		Connection conn = null;
+		PreparedStatement ps = null;
+		String sql = null;
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			conn = DriverManager.getConnection(dburl, dbUser, dbpasswd);
+			if(type.equals("TODO")) {
+				sql = "update todo set type = 'DOING' where id = " + id; 
+			}
+			else if(type.equals("DOING")) {
+				sql = "update todo set type = 'DONE' where id = " + id;
+			}
+			ps = conn.prepareStatement(sql);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			closeJdbc(conn, ps, null);			
+		}
+		
+	}
+	
 	public int addTodo(String title, String name, int sequence) {
 		Connection conn = null;
 		PreparedStatement ps = null;
@@ -55,7 +79,7 @@ public class TodoDao {
 			String sql = "insert into todo(title, name, sequence) values(?, ?, ?)";
 			ps = conn.prepareStatement(sql);
 			ps.setString(1, title);
-			ps.setString(1, name);
+			ps.setString(2, name);
 			ps.setInt(3, sequence);
 			
 			addcount = ps.executeUpdate();
@@ -83,13 +107,12 @@ public class TodoDao {
 			try {
 				
 				while(rs.next()) {
-					System.out.println("rs");
 					long id = rs.getLong("id");
 					String title = rs.getString("title");
 					String name = rs.getString("name");
 					int sequence = rs.getInt("sequence");
 					String type = rs.getString("type");
-					Timestamp regdate = rs.getTimestamp("regdate");
+					String regdate = rs.getString("regdate");
 					Todo todo = new Todo(id, title, name, sequence, type, regdate);
 					list.add(todo);
 				}
@@ -124,7 +147,7 @@ public class TodoDao {
 					String name = rs.getString("name");
 					int sequence = rs.getInt("sequence");
 					String type = rs.getString("type");
-					Timestamp regdate = rs.getTimestamp("regdate");
+					String regdate = rs.getString("regdate");
 					Todo todo = new Todo(id, title, name, sequence, type, regdate);
 					list.add(todo);
 				}
@@ -154,13 +177,12 @@ public class TodoDao {
 			try {
 				
 				while(rs.next()) {
-					System.out.println("rs");
 					long id = rs.getLong("id");
 					String title = rs.getString("title");
 					String name = rs.getString("name");
 					int sequence = rs.getInt("sequence");
 					String type = rs.getString("type");
-					Timestamp regdate = rs.getTimestamp("regdate");
+					String regdate = rs.getString("regdate");
 					Todo todo = new Todo(id, title, name, sequence, type, regdate);
 					list.add(todo);
 				}
@@ -190,13 +212,12 @@ public class TodoDao {
 			try {
 				
 				while(rs.next()) {
-					System.out.println("rs");
 					long id = rs.getLong("id");
 					String title = rs.getString("title");
 					String name = rs.getString("name");
 					int sequence = rs.getInt("sequence");
 					String type = rs.getString("type");
-					Timestamp regdate = rs.getTimestamp("regdate");
+					String regdate = rs.getString("regdate");
 					Todo todo = new Todo(id, title, name, sequence, type, regdate);
 					list.add(todo);
 				}
